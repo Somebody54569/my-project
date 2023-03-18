@@ -29,7 +29,10 @@ public class CameraController : MonoBehaviour
     private void Zoom()
     {
         zoomModifier = Input.GetAxis("Mouse ScrollWheel");
-
+        if (Input.GetKey(KeyCode.Z))
+            zoomModifier = 0.01f;
+        if (Input.GetKey(KeyCode.X))
+            zoomModifier = -0.01f;
         float dist = Vector3.Distance(transform.position, cam.transform.position);
 
         if (dist < minZoomDist && zoomModifier > 0f)
