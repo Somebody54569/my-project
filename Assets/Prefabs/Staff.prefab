@@ -1168,8 +1168,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4596640331168922}
   - component: {fileID: 95672999797837872}
+  - component: {fileID: 5335423272691862391}
   m_Layer: 0
-  m_Name: SM_Chr_FarmBoy_01 1
+  m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1217,6 +1218,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5335423272691862391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674885529865632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cbed9329bde604ca8b52d66ca15287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charSkin:
+  - {fileID: 1719133026623802}
+  - {fileID: 1974049927722618}
+  - {fileID: 1476073852342470}
+  - {fileID: 1723542237869448}
+  - {fileID: 1772410112290960}
+  staffName: 
+  dailyWage: 0
 --- !u!1 &1703637963276046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4137135469034742}
   - component: {fileID: 137013465805407752}
-  - component: {fileID: 8336423574382869005}
   m_Layer: 0
   m_Name: SM_Chr_FarmBoy_01
   m_TagString: Untagged
@@ -1511,25 +1531,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000000059604645, y: 0.84915364, z: -0.04850263}
     m_Extent: {x: 1.0245616, y: 0.94945085, z: 0.26688987}
   m_DirtyAABB: 0
---- !u!114 &8336423574382869005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719133026623802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55cbed9329bde604ca8b52d66ca15287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charSkin:
-  - {fileID: 1719133026623802}
-  - {fileID: 1974049927722618}
-  - {fileID: 1476073852342470}
-  - {fileID: 1723542237869448}
-  - {fileID: 1772410112290960}
-  staffName: 
 --- !u!1 &1723542237869448
 GameObject:
   m_ObjectHideFlags: 0
