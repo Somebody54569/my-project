@@ -145,6 +145,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Staff
       objectReference: {fileID: 0}
+    - target: {fileID: 1920296411442848, guid: 57f0d049d2c51094abfdc1988d93b455, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974049927722618, guid: 57f0d049d2c51094abfdc1988d93b455, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4596640331168922, guid: 57f0d049d2c51094abfdc1988d93b455, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -159,7 +167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4596640331168922, guid: 57f0d049d2c51094abfdc1988d93b455, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.69
+      value: -7.448
       objectReference: {fileID: 0}
     - target: {fileID: 4596640331168922, guid: 57f0d049d2c51094abfdc1988d93b455, type: 3}
       propertyPath: m_LocalRotation.w
