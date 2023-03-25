@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 4596640331168922}
   - component: {fileID: 95672999797837872}
   - component: {fileID: 5335423272691862391}
+  - component: {fileID: 7621701426175685843}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
@@ -1208,7 +1209,7 @@ Animator:
   m_GameObject: {fileID: 1674885529865632}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff9bed46f8015c24eb76ac48fdfd7256, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1238,6 +1239,18 @@ MonoBehaviour:
   - {fileID: 1772410112290960}
   staffName: 
   dailyWage: 0
+--- !u!114 &7621701426175685843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674885529865632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174852ad1a669ca44b8c9a7c029418ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1703637963276046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4137135469034742
 Transform:
   m_ObjectHideFlags: 0
