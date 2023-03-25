@@ -29,4 +29,10 @@ public class StaffAnimation : MonoBehaviour
             _anim.SetBool("isIdle", false);
         }
     }
+
+    private void DisableAll()
+    {
+        _anim.SetBool("isIdle", false);
+        _anim.SetBool("isWalk", false);
+    }
 }

@@ -1170,6 +1170,8 @@ GameObject:
   - component: {fileID: 95672999797837872}
   - component: {fileID: 5335423272691862391}
   - component: {fileID: 7621701426175685843}
+  - component: {fileID: 5293894609591848417}
+  - component: {fileID: -8258216037186810898}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
@@ -1239,6 +1241,8 @@ MonoBehaviour:
   - {fileID: 1772410112290960}
   staffName: 
   dailyWage: 0
+  state: 0
+  navAgent: {fileID: 0}
 --- !u!114 &7621701426175685843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,6 +1255,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174852ad1a669ca44b8c9a7c029418ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &5293894609591848417
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674885529865632}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!136 &-8258216037186810898
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674885529865632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1703637963276046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,7 +1466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4137135469034742
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public enum UnitState
 {
@@ -21,7 +24,20 @@ public class Staff : MonoBehaviour
 
     //Animation
     [SerializeField] private UnitState state;
+    
+    //Nav Agent
+    [SerializeField] private NavMeshAgent navAgent;
+    public NavMeshAgent NavAgent { get { return navAgent; } }
 
+    private void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+    }
+
+    void Update()
+    {
+        CheckStop();
+    }
     public UnitState State
     {
         get { return state; }
@@ -49,5 +65,24 @@ public class Staff : MonoBehaviour
                 charSkin[i].SetActive(false);
             }
         }
+    }
+
+    public void CheckStop()
+    {
+        float dist = Vector3.Distance(transform.position, navAgent.destination);
+
+        if (dist <= 3f)
+        {
+            state = UnitState.Idle;
+            navAgent.isStopped = true;
+        }
+    }
+
+    public void SetToWalk(Vector3 dest)
+    {
+        state = UnitState.Walk;
+
+        navAgent.SetDestination(dest);
+        navAgent.isStopped = false;
     }
 }
