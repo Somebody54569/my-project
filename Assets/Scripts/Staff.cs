@@ -8,7 +8,11 @@ using Random = UnityEngine.Random;
 public enum UnitState
 {
     Idle,
-    Walk
+    Walk,
+    Sow,
+    Water,
+    Plow,
+    Harvest
 }
 public class Staff : MonoBehaviour
 {

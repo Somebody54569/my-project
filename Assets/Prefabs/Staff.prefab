@@ -1242,7 +1242,7 @@ MonoBehaviour:
   staffName: 
   dailyWage: 0
   state: 0
-  navAgent: {fileID: 0}
+  navAgent: {fileID: 5293894609591848417}
 --- !u!114 &7621701426175685843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2354,7 +2354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4420182223091080
 Transform:
   m_ObjectHideFlags: 0
