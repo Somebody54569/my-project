@@ -29,5 +29,6 @@ public class UI : MonoBehaviour
     public void UpdateHeaderPanel()
     {
         moneyText.text = GameManager.instance.money.ToString();
+        staffText.text = GameManager.instance.staffCount.ToString();
     }
 }

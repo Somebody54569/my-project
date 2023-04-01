@@ -14,13 +14,12 @@ public class GameManager : MonoBehaviour
     
     //Resource
     public int money;
-    public int staff;
+    public int staffCount;
     public int wheat;
     public int melon;
     public int corn;
     public int apple;
     public int date;
-    
     // Start is called before the first frame update
     void Start()
     {
