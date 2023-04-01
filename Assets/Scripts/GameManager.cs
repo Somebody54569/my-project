@@ -12,11 +12,22 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     
+    //Resource
+    public int money;
+    public int staff;
+    public int wheat;
+    public int melon;
+    public int corn;
+    public int apple;
+    public int date;
+    
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         GenerateCandidate();
+        money = 25000;
+        UI.instance.UpdateHeaderPanel();
     }
 
     // Update is called once per frame
