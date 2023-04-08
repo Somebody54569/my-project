@@ -33,6 +33,7 @@ public class Staff : MonoBehaviour
     [SerializeField] private NavMeshAgent navAgent;
     public NavMeshAgent NavAgent { get { return navAgent; } }
 
+    public GameObject Workplace;
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -88,5 +89,43 @@ public class Staff : MonoBehaviour
 
         navAgent.SetDestination(dest);
         navAgent.isStopped = false;
+    }
+    
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject != Workplace)
+            return;
+
+ 
+
+        Farm farm = other.gameObject.GetComponent<Farm>();
+
+ 
+
+        if (farm != null && farm.hp < 100 && navAgent.isStopped == true)
+        {
+            switch(farm.stage)
+            {
+                case FarmStage.plowing:
+                    state = UnitState.Plow;
+                    farm.CheckTimeForWork();
+                    break;
+                
+                case FarmStage.sowing:
+                    state = UnitState.Sow;
+                    farm.CheckTimeForWork();
+                    break;
+                
+                case FarmStage.maintaining:
+                    state = UnitState.Water;
+                    farm.CheckTimeForWork();
+                    break;
+                
+                case FarmStage.harvesting:
+                    state = UnitState.Harvest;
+                    farm.CheckTimeForWork();
+                    break;
+            }
+        }
     }
 }

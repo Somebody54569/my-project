@@ -14,7 +14,8 @@ public class UI : MonoBehaviour
     public TMP_Text cornText;
     public TMP_Text appleText;
     public TMP_Text dateText;
-    
+
+    public GameObject FarmPanel;
     void Awake()
     {
         instance = this;
@@ -29,6 +30,11 @@ public class UI : MonoBehaviour
     public void UpdateHeaderPanel()
     {
         moneyText.text = GameManager.instance.money.ToString();
-        staffText.text = GameManager.instance.staffCount.ToString();
     }
+
+    public void ToggleFarmPanel(bool flag)
+    {
+        FarmPanel.SetActive(flag);
+    }
+    
 }
