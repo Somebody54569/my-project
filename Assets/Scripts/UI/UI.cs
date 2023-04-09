@@ -30,11 +30,15 @@ public class UI : MonoBehaviour
     public void UpdateHeaderPanel()
     {
         moneyText.text = GameManager.instance.money.ToString();
+        wheatText.text = GameManager.instance.wheat.ToString();
+        staffText.text = GameManager.instance.staffNum.ToString();
     }
 
     public void ToggleFarmPanel(bool flag)
     {
         FarmPanel.SetActive(flag);
     }
+
+    
     
 }

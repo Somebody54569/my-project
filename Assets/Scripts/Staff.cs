@@ -28,6 +28,7 @@ public class Staff : MonoBehaviour
 
     //Animation
     [SerializeField] private UnitState state;
+    public UnitState State { get { return state; } set { state = value; } }
     
     //Nav Agent
     [SerializeField] private NavMeshAgent navAgent;
@@ -41,14 +42,19 @@ public class Staff : MonoBehaviour
 
     void Update()
     {
-        CheckStop();
-    }
-    public UnitState State
-    {
-        get { return state; }
-        set { state = value; }
+        SwitchStaffState();
     }
 
+    private void SwitchStaffState()
+    {
+        switch (state)
+        {
+            case UnitState.Walk:
+                CheckStop();
+                break;
+        }
+    }
+    
     public void InitCharID(int id)
     {
         _id = id;
@@ -95,13 +101,9 @@ public class Staff : MonoBehaviour
     {
         if (other.gameObject != Workplace)
             return;
-
- 
-
+        
         Farm farm = other.gameObject.GetComponent<Farm>();
-
- 
-
+        
         if (farm != null && farm.hp < 100 && navAgent.isStopped == true)
         {
             switch(farm.stage)

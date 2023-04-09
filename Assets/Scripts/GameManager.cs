@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         GenerateCandidate();
-        money = 25000;
+        money = 35000;
+        wheat = 0;
+        staffNum = staff.Count;
         UI.instance.UpdateHeaderPanel();
     }
 
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void GenerateCandidate()
     {
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 21; i++)
         {
             GameObject staffObj = Instantiate(staffPrefab, staffParent.transform);
             Staff s = staffObj.GetComponent<Staff>();
@@ -82,5 +84,12 @@ public class GameManager : MonoBehaviour
             if (n >= f.MaxStaffNum)
                 break;
         }
+    }
+
+    public void SellWheat()
+    {
+        money += wheat;
+        wheat = 0;
+        UI.instance.UpdateHeaderPanel();
     }
 }

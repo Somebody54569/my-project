@@ -62,6 +62,17 @@ public class StructureManager : MonoBehaviour
             else
                 CheckLeftClick(Input.mousePosition);
         }
+        
+        //Cancel Building/Demolishing
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            CancelConstruction();
+
+            if (isDemolishing)
+            {
+                ToggleDemolish();
+            }
+        }
     }
 
     public void BeginNewBuildingPlacement(GameObject prefab) //map w button
@@ -104,9 +115,9 @@ public class StructureManager : MonoBehaviour
         Structure s = structureObj.GetComponent<Structure>();
         GameManager.instance.structures.Add(s);
         DeductMoney(s.costToBuild);
+
         if (!Input.GetKey(KeyCode.LeftShift))
             CancelConstruction();
-            
     }
 
     private void CancelConstruction()
@@ -177,6 +188,7 @@ public class StructureManager : MonoBehaviour
     public void CallStaff()
     {
         GameManager.instance.SendStaff(curStructure);
+        UI.instance.ToggleFarmPanel(false);
     }
     
 }

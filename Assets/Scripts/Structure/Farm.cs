@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum FarmStage
 {
     plowing,
@@ -9,45 +10,65 @@ public enum FarmStage
     maintaining,
     harvesting
 }
-
 public class Farm : Structure
 {
     public FarmStage stage = FarmStage.plowing;
 
+ 
+
     [SerializeField] private int maxStaffNum = 3;
-    public int MaxStaffNum { get { return maxStaffNum;} set { maxStaffNum = value; } }
+    public int MaxStaffNum { get { return maxStaffNum; } set { maxStaffNum = value; } }
+
+ 
 
     public int dayRequired; //Days required until cultivation
     public int dayPassed; //Day passed since last cultivation
-    public float productTimer = 0f; //Timer in seconds
+    public float produceTimer = 0f; //Timer in seconds
     private int secondsPerDay = 10; //Number of seconds equals to a day in game
+
+ 
 
     public int cultivateDuration;
 
-    public float WorkTimer = 0f; // Time for working to increase progress in each stage
+ 
+
+    public float WorkTimer = 0f; //Timer for working to increase progress in each stage
     private float WorkTimeWait = 1f;
+
+ 
 
     public GameObject FarmUI;
 
+ 
+
     [SerializeField] private List<Staff> workingStaff;
     public List<Staff> WorkingStaff { get { return workingStaff; } set { workingStaff = value; } }
+
+ 
+
     // Update is called once per frame
     void Update()
     {
         CheckPlowing();
         CheckSowing();
-        CheckMaintianing();
+        CheckMaintaining();
         CheckHarvesting();
     }
+
+ 
 
     private void Working()
     {
         hp += 3;
     }
 
+ 
+
     public void CheckTimeForWork()
     {
-        WorkTimer = Time.deltaTime;
+        WorkTimer += Time.deltaTime;
+
+ 
 
         if (WorkTimer > WorkTimeWait)
         {
@@ -55,6 +76,8 @@ public class Farm : Structure
             Working();
         }
     }
+
+ 
 
     private void CheckPlowing()
     {
@@ -64,7 +87,9 @@ public class Farm : Structure
             hp = 1;
         }
     }
-    
+
+ 
+
     private void CheckSowing()
     {
         if ((hp >= 100) && (stage == FarmStage.sowing))
@@ -75,21 +100,27 @@ public class Farm : Structure
         }
     }
 
-    public void CheckMaintianing()
+ 
+
+    public void CheckMaintaining()
     {
         if ((hp >= 100) && (stage == FarmStage.maintaining))
         {
-            productTimer += Time.deltaTime;
-            dayPassed = Mathf.CeilToInt(productTimer / secondsPerDay);
+            produceTimer += Time.deltaTime;
+            dayPassed = Mathf.CeilToInt(produceTimer / secondsPerDay);
+
+ 
 
             if ((functional == true) && (dayPassed >= dayRequired))
             {
                 stage = FarmStage.harvesting;
                 hp = 1;
-                productTimer = 0;
+                produceTimer = 0;
             }
         }
     }
+
+ 
 
     private void CheckHarvesting()
     {
@@ -101,6 +132,7 @@ public class Farm : Structure
         }
     }
 
+ 
 
     private void HarvestResult()
     {
@@ -110,5 +142,9 @@ public class Farm : Structure
                 GameManager.instance.wheat += 1000;
                 break;
         }
+
+ 
+
+        UI.instance.UpdateHeaderPanel();
     }
 }
